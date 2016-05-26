@@ -1,0 +1,47 @@
+$table-color:orange;
+
+@mixin triangle(){
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  cursor: pointer;
+  position: absolute;
+  border-bottom: 10px solid rgb(255, 255, 255);
+}
+@mixin triangle_transform(){
+  @include triangle();
+  transform: rotate(180deg);
+}
+
+table{
+  border:none;
+  border-collapse:collapse;
+  font-family: "microsoft yahei";
+  thead{
+    background-color: $table-color;
+    color:#fff;
+  }
+  tr{
+    padding: 0;
+    margin: 0;
+  }
+  th{}
+  th,td{
+    border: 1px solid #ccc;
+    padding: 20px 40px;
+    margin: 0;
+    position: relative;
+  }
+}
+.triangle{
+  @include triangle();
+  top:20px;
+  right:10px;
+}
+.triangle_transform{
+  @include triangle_transform();
+  top:36px;
+  right:10px;
+}
+
